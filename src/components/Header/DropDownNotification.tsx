@@ -43,7 +43,7 @@ const DropdownNotification = () => {
           setNotifying(false);
           setDropdownOpen(!dropdownOpen);
         }}
-        className="flex h-15 w-15 items-center justify-center rounded-full bg-black-light-50"
+        className="flex h-15 w-15 items-center justify-center rounded-full bg-[#fffaf1] bg-opacity-10"
         href="#"
       >
         <div>
@@ -70,7 +70,7 @@ const DropdownNotification = () => {
           </div>
           <ul>
             <li className="border-b border-white border-opacity-20 last:border-0">
-              <a className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
+              <Link className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
                 <span className="block text-sm mb-2">
                   📣{" "}
                   <span className="font-medium text-white">
@@ -82,10 +82,10 @@ const DropdownNotification = () => {
                 <span className="block text-xs font-medium text-slate-400">
                   Feb 12, 2021
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="border-b border-white border-opacity-20  last:border-0">
-              <a className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
+              <Link className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
                 <span className="block text-sm mb-2">
                   📣{" "}
                   <span className="font-medium text-white">
@@ -97,10 +97,10 @@ const DropdownNotification = () => {
                 <span className="block text-xs font-medium text-slate-400">
                   Feb 9, 2021
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="border-b border-white border-opacity-20  last:border-0">
-              <a className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
+              <Link className="block py-2 px-4 hover:bg-[#1a1a1d]" href="/#0">
                 <span className="block text-sm mb-2">
                   🚀
                   <span className="font-medium text-white">
@@ -112,7 +112,7 @@ const DropdownNotification = () => {
                 <span className="block text-xs font-medium text-slate-400">
                   Jan 24, 2020
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

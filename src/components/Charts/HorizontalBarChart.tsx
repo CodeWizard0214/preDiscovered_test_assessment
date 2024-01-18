@@ -80,7 +80,7 @@ const HorizontalBarChart = () => {
     beforeDatasetsDraw(chart: ChartJS<'bar'>) {
       const { ctx, data, chartArea , scales } = chart;
       const { top, bottom, left, right, width, height } = chartArea;
-      const barThickness = chart.getDatasetMeta(0).data[0].height;
+      const barThickness = (chart.getDatasetMeta(0).data[0] as any).height;
       const radius = 15;
 
       ctx.save();

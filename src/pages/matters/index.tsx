@@ -11,8 +11,8 @@ import IconButton from "@/components/common/IconButton";
 const Matter: React.FC = () => {
   return (
     <div className="flex flex-col w-full bg-black-light-50 gap-7.5 py-10 px-7.5 rounded-2xl">
-      <div className="flex flex-row justify-between items-center">
-        <div className="flex flex-row  gap-8 items-center">
+      <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between items-center">
+        <div className="flex md:flex-row flex-col gap-8 items-center">
           <h4 className="text-white font-medium text-2xl font-poppins">
             Matters
           </h4>
@@ -39,8 +39,10 @@ const Matter: React.FC = () => {
         rowCustomize={[{ rownum: 4, component: TableStatusCell }]}
         isLoading={false}
       />
-      <div className="flex justify-between">
-        <IconButton icon="/assets/img/export.svg" title="Export" />
+      <div className="flex md:flex-row flex-col gap-5 md:gap-0 md:justify-between items-center">
+        <div className="flex">
+          <IconButton icon="/assets/img/export.svg" title="Export" />
+        </div>
         <CoustomPagination />
       </div>
     </div>

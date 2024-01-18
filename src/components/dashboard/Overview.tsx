@@ -5,7 +5,7 @@ import HoldCard from "./HoldCard";
 
 const Overview  = () => {
   return (
-    <div className="w-full h-full px-7.5 pt-7.5 pb-12 text-white rounded-[20px] bg-black-light-100">
+    <div className="w-full h-full px-7.5 py-7.5 text-white rounded-[20px] bg-black-light-100">
       <div className="flex flex-row justify-between items-start">
         <div className="flex flex-col gap-1">
           <p className="text-xl leading-8 font-semibold">Holds Overview</p>

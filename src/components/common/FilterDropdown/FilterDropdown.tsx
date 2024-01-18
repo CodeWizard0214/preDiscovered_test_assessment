@@ -33,7 +33,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (dropdownRef.current && !(dropdownRef.current as any).contains(event.target as Node)) {
         setDropdownOpen(false);
       }
     };

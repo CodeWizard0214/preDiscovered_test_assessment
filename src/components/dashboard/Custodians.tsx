@@ -23,7 +23,7 @@ ChartJS.register(
 const Custodians  = () => {
 
   return (
-    <div className="w-full h-full px-7.5 pt-7.5 pb-12 text-white rounded-[20px] bg-black-light-100">
+    <div className="w-full h-full px-7.5 py-7.5 text-white rounded-[20px] bg-black-light-100">
       <p className="text-xl leading-8 font-semibold">Custodians Under Hold</p>
       <HorizontalBarChart />
     </div>

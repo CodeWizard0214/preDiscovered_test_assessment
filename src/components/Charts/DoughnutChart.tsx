@@ -5,6 +5,8 @@ import {
   ArcElement,
   Tooltip,
   Legend,
+  ChartOptions,
+  Plugin
 } from 'chart.js';
 
 import { DOUGHNUT_DATA } from "@/mock/mock";
@@ -32,7 +34,7 @@ const DoughnutChart  = () => {
     ],
  }
 
- const options = {
+ const options: ChartOptions<'doughnut'> = {
   responsive: true,
   plugins: {
     legend: {
@@ -51,9 +53,9 @@ const DoughnutChart  = () => {
   },
 };
 
-const doughnutLabel = {
+const doughnutLabel: Plugin<'doughnut'> = {
   id: 'doughnutLabel',
-  afterDatasetsDraw(chart: ChartJS, args: number[], plugins: unknown) {
+  afterDatasetsDraw(chart: ChartJS<'doughnut'>) {
     const {ctx, data} = chart;
 
     const centerX = chart.getDatasetMeta(0).data[0].x;

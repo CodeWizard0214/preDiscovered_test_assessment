@@ -19,30 +19,31 @@ const AdminTable: React.FC<AdminTableProps> = ({
     useTable({ columns, data }, useSortBy);
 
   return (
-    <div className="rounded-lg overflow-hidden">
+    <div className="rounded-lg overflow-hidden overflow-x-auto max-w-[1080px] lg:max-w-full">
       <div>
         <table
           {...getTableProps()}
-          className="min-w-full divide-y divide-black-light-300 font-sans"
+          className="min-w-full divide-y divide-black-light-300 font-sans w-[1080px] lg:w-full"
         >
           <thead className="bg-black-light-200 text-white">
             {headerGroups.map((headerGroup, idx) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={idx}>
                 {headerGroup.headers.map((column, idx) => (
                   <th
-                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                    {...column.getHeaderProps((column as any).getSortByToggleProps())}
                     key={idx}
                   >
                     <div className="flex items-center justify-between py-4 pl-4 text-left font-medium tracking-wider gap-1 ">
                       <span>{column.render("Header")}</span>
                       <div className="pr-4 border-r border-solid border-black-light-300">
-                        {column.isSorted ? (
-                          column.isSortedDesc ? (
+                        {(column as any).isSorted ? (
+                          (column as any).isSortedDesc ? (
                             <Image
                               src={"/assets/img/arrow-down.svg"}
                               width={24}
                               height={24}
                               alt="arrow-up"
+                              className="min-w-6 min-h-6"
                             />
                           ) : (
                             <Image
@@ -50,26 +51,17 @@ const AdminTable: React.FC<AdminTableProps> = ({
                               width={24}
                               height={24}
                               alt="arrow-down"
-                              className="rotate-180"
+                              className="rotate-180 min-w-6 min-h-6"
                             />
                           )
                         ) : (
-                          <>
-                            <Image
-                              src={"/assets/img/arrow-down.svg"}
-                              width={24}
-                              height={24}
-                              alt="arrow-down"
-                              className="rotate-180"
-                            />
-                            <Image
-                              src={"/assets/img/arrow-down.svg"}
-                              width={24}
-                              height={24}
-                              alt="arrow-down"
-                              className="mt-[-15px]"
-                            />
-                          </>
+                          <Image
+                            src={"/assets/img/arrow-down.svg"}
+                            width={24}
+                            height={24}
+                            alt="arrow-up"
+                            className="min-w-6 min-h-6"
+                          />
                         )}
                       </div>
                     </div>
@@ -94,7 +86,7 @@ const AdminTable: React.FC<AdminTableProps> = ({
                         <th
                           className="p-4 text-left text-xs font-normal"
                           {...column.getHeaderProps(
-                            column.getSortByToggleProps()
+                            (column as any).getSortByToggleProps()
                           )}
                           key={idx}
                         >
