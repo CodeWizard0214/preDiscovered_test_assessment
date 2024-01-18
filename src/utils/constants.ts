@@ -5,7 +5,7 @@ export const MATTERS_HEADER = [
   { Header: "Source held", accessor: "sources" },
   { Header: "Case Status", accessor: "status" },
   { Header: "Date Release", accessor: "release" },
-  { Header: "Acknowledgement %", accessor: "acknowledgement" },
+  { Header: "Acknowledge ment %", accessor: "acknowledgement" },
   { Header: "Lead Attorney", accessor: "lead" },
   { Header: "Case Type", accessor: "type" },
   { Header: " ", accessor: "manage" },
