@@ -14,7 +14,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ keyword, onChange }) => {
   };
 
   return (
-    <div className="flex flex-row rounded-full w-[512px] bg-black-light-50 border border-solid border-black-1000 h-15 pl-6 pr-8 py-0.5 items-center gap-2">
+    <div className="hidden xl:flex flex-row rounded-full w-[512px] bg-black-light-50 border border-solid border-black-1000 h-15 pl-6 pr-8 py-0.5 items-center gap-2">
       <Image
         src={"/assets/img/search-primary.svg"}
         width={24}

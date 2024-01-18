@@ -21,7 +21,7 @@ const AdminTable: React.FC<AdminTableProps> = ({
     useTable({ columns, data }, useSortBy);
 
   return (
-    <div className="rounded-lg overflow-hidden overflow-x-auto max-w-full list-scrollbar">
+    <div className="rounded-lg overflow-x-auto max-w-full list-scrollbar">
       <div className="w-[1080px] lg:w-full pb-3">
         <table
           {...getTableProps()}

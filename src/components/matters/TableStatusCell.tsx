@@ -1,7 +1,7 @@
 import React from "react";
 
 interface TableStatusCellProps {
-  data: any; // Adjust the type accordingly
+  data: any;
 }
 
 const TableStatusCell: React.FC<TableStatusCellProps> = ({ data }) => {

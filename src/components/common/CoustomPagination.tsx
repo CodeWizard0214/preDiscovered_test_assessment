@@ -6,8 +6,19 @@ import {
 } from "@nextui-org/react";
 import classnames from "classnames";
 import Image from "next/image";
+import { cursorTo } from "readline";
 
-const CoustomPagination = () => {
+interface CoustomPaginationProps {
+  totalPages: number;
+  currentPage: number;
+  onChange: (value: number) => void;
+}
+
+const CoustomPagination: React.FC<CoustomPaginationProps> = ({
+  totalPages,
+  currentPage,
+  onChange,
+}) => {
   const renderItem = (props: PaginationItemRenderProps) => {
     const {
       key,
@@ -88,11 +99,15 @@ const CoustomPagination = () => {
         <Pagination
           showControls
           showShadow
-          total={10}
+          total={totalPages}
+          page={currentPage}
           initialPage={1}
           className="gap-4"
           renderItem={renderItem}
           variant="flat"
+          siblings={1}
+          boundaries={1}
+          onChange={onChange}
         />
       </div>
     </div>

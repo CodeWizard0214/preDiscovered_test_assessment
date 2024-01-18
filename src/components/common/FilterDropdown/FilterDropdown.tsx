@@ -21,11 +21,8 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
   useEffect(() => {
     const handleLoad = () => {
-      // You can perform additional setup logic here if needed
     };
-
     window.addEventListener("load", handleLoad);
-
     return () => {
       window.removeEventListener("load", handleLoad);
     };
@@ -33,7 +30,10 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !(dropdownRef.current as any).contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !(dropdownRef.current as any).contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -61,14 +61,13 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       <button
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="rounded-sm border-white border border-opacity-20 px-4 py-[10px] bg-white bg-opacity-10 text-[15px] text-white flex items-center w-[120px] justify-between"
+        className="rounded-sm border-white border border-opacity-20 px-4 py-2.5 bg-white bg-opacity-10 text-[15px] text-white flex items-center w-[120px] justify-between"
         type="button"
         onClick={toggleDropdown}
       >
         {title}
         <Image src={iconURL} alt="filter icon" width={24} height={24} />
       </button>
-
       <div
         id="dropdown"
         className={`z-10 ${

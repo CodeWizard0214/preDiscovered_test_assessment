@@ -9,10 +9,8 @@ import {
   Tooltip,
   Legend,
   ChartOptions,
-} from 'chart.js';
-
-import { VERTICAL_CHART_DATA } from "@/mock/mock";
-
+  ChartData,
+} from "chart.js";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,7 +20,11 @@ ChartJS.register(
   Legend
 );
 
-const options: ChartOptions<'bar'> = {
+interface VerticalBarChartProp {
+  chartData: ChartData<'bar'>
+}
+
+const options: ChartOptions<"bar"> = {
   responsive: true,
   scales: {
     x: {
@@ -30,57 +32,52 @@ const options: ChartOptions<'bar'> = {
         display: true,
         text: "Acknowledgement",
         padding: {
-          top: 20
-        }
+          top: 20,
+        },
       },
       ticks: {
-        display: false
+        display: false,
       },
       grid: {
-        display: false
+        display: false,
       },
       border: {
-        width: 0
-      }
+        width: 0,
+      },
     },
     y: {
       ticks: {
-        color: '#7B91B0',
+        color: "#7B91B0",
         font: {
           size: 12,
         },
-        crossAlign: "near"
+        crossAlign: "near",
       },
       grid: {
         display: true,
-        color: "rgba(70, 78, 95, 0.12)"
+        color: "rgba(70, 78, 95, 0.12)",
       },
       title: {
         display: true,
         text: "Case Number",
         padding: {
-          bottom: 20
-        }
+          bottom: 20,
+        },
       },
       border: {
-        width: 0
-      }
-    }
+        width: 0,
+      },
+    },
   },
   plugins: {
     legend: {
-      display: false
+      display: false,
     },
-  }
+  },
 };
 
-const VerticalBarChart = () => {
-  return (
-    <Bar
-      data={VERTICAL_CHART_DATA}
-      options={options}
-    />
-  )
-}
+const VerticalBarChart = (props: VerticalBarChartProp) => {
+  return <Bar data={props.chartData} options={options} />;
+};
 
 export default VerticalBarChart;

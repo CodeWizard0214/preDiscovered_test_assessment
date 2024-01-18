@@ -28,7 +28,7 @@ const Sidebar = (props: SideBarProp) => {
 
   return (
     <aside
-    ref={sidebar}
+      ref={sidebar}
       className="h-screen px-5 py-7 flex flex-col items-center justify-between md:bg-white bg-black-light-100 md:bg-opacity-5 border-r border-solid border-r-white border-opacity-10 shadow-2xl md:relative fixed z-10 duration-300 ease-linear transition-all"
     >
       <div className="flex flex-col">

@@ -1,40 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Overview
 
-## Getting Started
+## Environment
+The project is built on Node.js version 20.
 
-First, run the development server:
+## Deployed Application URL
+You can access the deployed application at [https://pre-discovered-test-assessment.vercel.app/](https://pre-discovered-test-assessment.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Functions and Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pixel-Perfect and Fully Mobile Responsive User Interfaces:
+I have meticulously crafted pixel-perfect user interfaces that seamlessly adapt to various screen sizes. The design mirrors the precision of the original Figma layout.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Chart.js Implementation:** I leveraged Chart.js to bring dynamic and visually appealing barcharts and donut charts to our dashboard. The charts faithfully replicate the visual elements present in the Figma design.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Hamburger Button for Customized Mobile Sidebar:** To optimize the user experience on mobile devices, I implemented a "Hamburger" button, allowing users to access a customized sidebar that remains hidden in smaller screen resolutions.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Customized Datatable and Pagination:
+Our datatable and pagination components have undergone extensive customization to ensure a seamless and user-friendly experience. The design prioritizes clarity and efficiency in presenting tabular data.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Single JSON Fake Data for Dashboard:
+In the dashboard section, I have streamlined data integration by utilizing a single JSON fake data source. This approach enhances convenience and lays a foundation for easy integration with GraphQL APIs in the future.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Reusable Component Library:
+Throughout the development process, I have invested in creating a library of reusable components. This not only promotes code consistency but also facilitates efficient development and maintenance cycles.

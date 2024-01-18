@@ -50,7 +50,7 @@ const DropDownMessage = () => {
             src={"/assets/img/message-outlined.svg"}
             width={24}
             height={24}
-            alt=""
+            alt="message"
           />
           <div className="animate-pulse bg-secondary rounded-full w-[6.5px] h-[6.5px] absolute right-[15px] top-[11px]"></div>
         </div>

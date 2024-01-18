@@ -52,10 +52,10 @@ const DropdownUser = () => {
           />
 					<div className="flex flex-col gap-1 items-center">
 						<div className="flex flex-row w-full justify-between gap-4">
-							<span className="text-white text-paragraph2">{USER_INFO.name}</span>
-							<Image src={"/assets/img/arrow-down.svg"} width={16} height={16} alt="" />
+							<span className="text-white text-paragraph2 hidden lg:block">{USER_INFO.name}</span>
+							<Image src={"/assets/img/arrow-down.svg"} width={16} height={16} alt="" className="hidden lg:block"/>
 						</div>
-						<div className="w-full text-black-300">{USER_INFO.role}</div>
+						<div className="w-full text-black-300 hidden lg:block">{USER_INFO.role}</div>
 					</div>
         </div>
       </Link>
