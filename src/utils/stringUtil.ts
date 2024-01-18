@@ -7,3 +7,4 @@ export const getPercentage = (percent: number) => {
 export const getFormattedDate = (date: Date) => {
   return moment(date).format("MM/DD/YY");
 };
+ 

@@ -2,10 +2,11 @@ import Image from "next/image";
 import React from "react";
 
 import HoldCard from "./HoldCard";
+import { HOLD_OVERVIEW_DATA } from "@/mock/mock";
 
 const Overview  = () => {
   return (
-    <div className="w-full h-full px-7.5 py-7.5 text-white rounded-[20px] bg-black-light-100">
+    <div className="w-full h-full px-7.5 pt-7.5 text-white rounded-[20px] bg-black-light-100">
       <div className="flex flex-row justify-between items-start">
         <div className="flex flex-col gap-1">
           <p className="text-xl leading-8 font-semibold">Holds Overview</p>
@@ -18,42 +19,19 @@ const Overview  = () => {
           <p className="text-sm font-medium leading-5 text-white">Export</p>
         </button>
       </div>
-      <div className="mt-7.5 w-full grid md:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-2">
-        <HoldCard
-          bgColor="bg-secondary bg-opacity-10"
-          iconBg="bg-secondary"
-          value={343}
-          desc="Number of Active Holds"
-          imgURL="/assets/img/activeholds.svg"
-        />
-        <HoldCard
-          bgColor="bg-primary-base bg-opacity-10"
-          iconBg="bg-primary-base"
-          value={300}
-          desc="Number of Active Custodians"
-          imgURL="/assets/img/activecustodians.svg"
-        />
-        <HoldCard
-          bgColor="bg-secondary bg-opacity-10"
-          iconBg="bg-yellow-green"
-          value={5}
-          desc="Acknowledgement Rate"
-          imgURL="/assets/img/acknowrate.svg"
-        />
-        <HoldCard
-          bgColor="bg-deep-violet bg-opacity-10"
-          iconBg="bg-deep-violet"
-          value={8}
-          desc="Number of assets with preservation"
-          imgURL="/assets/img/assetsnumber.svg"
-        />
-        <HoldCard
-          bgColor="bg-deep-navy bg-opacity-10"
-          iconBg="bg-deep-navy"
-          value={8}
-          desc="Number of assets"
-          imgURL="/assets/img/assetsnumber.svg"
-        />
+      <div className="mt-7.5 w-full grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-2">
+        {
+          HOLD_OVERVIEW_DATA.map((data, index) => (
+            <HoldCard
+              key={index}
+              bgColor={data.bgColor}
+              iconBg={data.iconBg}
+              value={data.value}
+              desc={data.desc}
+              imgURL={data.imgURL}
+            />
+          ))
+        }
       </div>
     </div>
   )

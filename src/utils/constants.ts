@@ -8,4 +8,5 @@ export const MATTERS_HEADER = [
 	{ Header: "Acknowledgement %", accessor: "acknowledgement" },
 	{ Header: "Lead Attorney", accessor: "lead" },
 	{ Header: "Case Type", accessor: "type" },
+	{ Header: " ", accessor: "manage" },
 ];

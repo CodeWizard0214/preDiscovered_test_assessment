@@ -36,7 +36,10 @@ const Matter: React.FC = () => {
       <CustomDataTable
         columns={MATTERS_HEADER}
         data={MATTERS_DATA}
-        rowCustomize={[{ rownum: 4, component: TableStatusCell }]}
+        rowCustomize={[
+          { rownum: 4, component: TableStatusCell as React.FC },
+          { rownum: 9, component: () => <>• • •</> },
+        ]}
         isLoading={false}
       />
       <div className="flex md:flex-row flex-col gap-5 md:gap-0 md:justify-between items-center">

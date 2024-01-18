@@ -9,7 +9,11 @@ import DropdownMessage from "./DropDownMessage";
 import DropDownNotification from "./DropDownNotification";
 import DropdownUser from "./DropDownUser";
 
-const Header = () => {
+interface HeaderProps {
+  setShowMobileMenu: () => void
+}
+
+const Header = (props: HeaderProps) => {
   const [keyword, setKeyword] = useState("");
   const pathname = usePathname();
 
@@ -21,7 +25,7 @@ const Header = () => {
   // replacePathName(pathname);
   // console.log(pathname, "pathname")
   return (
-    <header className="top-0 z-999 flex w-full items-center lg:justify-between justify-end gap-20 mt-7.5 px-8">
+    <header className="top-0 z-999 flex w-full items-center lg:justify-between md:justify-end justify-between gap-20 mt-7.5 px-8">
       <div className="hidden lg:flex flex-1 justify-between items-center gap-6 ">
         {
           pathname === "/" ? (
@@ -37,6 +41,12 @@ const Header = () => {
         }
         <SearchInput keyword={keyword} onChange={setKeyword} />
       </div>
+      <button
+        className="w-10 h-10 flex md:hidden items-center justify-center bg-black-light-50 rounded-xl"
+        onClick={(e) => {e.stopPropagation(); props.setShowMobileMenu() }}
+      >
+        <Image src="/assets/img/mobilemenu.svg" alt="mobilemenu" width={24} height={24} />
+      </button>
       <div className="flex flex-row w-fit gap-3">
         <DropDownNotification />
         <DropdownMessage />

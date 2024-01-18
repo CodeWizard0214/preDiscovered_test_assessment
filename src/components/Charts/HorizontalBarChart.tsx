@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -30,9 +30,6 @@ const options: ChartOptions<'bar'> = {
       title: {
         display: true,
         text: "Case Number",
-        padding: {
-          top: 20
-        }
       },
       ticks: {
         display: false
@@ -75,13 +72,39 @@ const options: ChartOptions<'bar'> = {
 };
 
 const HorizontalBarChart = () => {
+  const [chartOptions, setChartOptions] = useState(options);
+  const [chartData, setChartData] = useState(HORIZONTAL_CHART_DATA);
+
+  useEffect(() => {
+    let isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      let tempOpt = Object.assign({}, chartOptions, {scales: { y: { ticks: { display: false } } }});
+      let tempData = Object.assign({}, chartData, {
+        datasets: [{
+          data: [65, 59, 80, 85, 56],
+          backgroundColor: "#F6921E",
+          borderRadius: 30,
+          barThickness: 15,
+          borderSkipped: false,
+        }]
+      });
+
+      console.log(tempData);
+
+      setChartOptions({...tempOpt});
+      setChartData({...tempData});
+    }
+    console.log(isMobile);
+  }, [])
+
   const horizontalBarTrack = {
     id: 'horizontalBarTrack',
     beforeDatasetsDraw(chart: ChartJS<'bar'>) {
       const { ctx, data, chartArea , scales } = chart;
       const { top, bottom, left, right, width, height } = chartArea;
       const barThickness = (chart.getDatasetMeta(0).data[0] as any).height;
-      const radius = 15;
+      const radius = barThickness / 2;
 
       ctx.save();
 
@@ -113,8 +136,8 @@ const HorizontalBarChart = () => {
 
   return (
     <Bar
-      data={HORIZONTAL_CHART_DATA}
-      options={options}
+      data={chartData}
+      options={chartOptions}
       plugins={[horizontalBarTrack]}
     />
   )

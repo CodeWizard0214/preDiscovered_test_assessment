@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>PreDiscovered</title>
         <meta name="description" content="preDiscovered" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/logo.webp" />
       </Head>
       <Layout>
         <Component {...pageProps} />

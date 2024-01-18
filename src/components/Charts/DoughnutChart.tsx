@@ -41,12 +41,12 @@ const DoughnutChart  = () => {
       position: "right",
       labels: {
         boxWidth: 11,
-        padding: 25,
+        boxHeight: 11,
+        padding: 20,
         font: {
           size: 16,
           family: "Poppins"
         },
-
         color: 'white',
       }
     },
@@ -63,19 +63,19 @@ const doughnutLabel: Plugin<'doughnut'> = {
 
     //text
     ctx.save();
-    ctx.font = 'bold 38px Poppins',
+    ctx.font = 'bold 28px Poppins',
     ctx.fillStyle = 'white',
     ctx.textAlign = 'center';
     ctx.fillText(DOUGHNUT_DATA.reduce((acc, item) => acc + parseInt(item.value), 0).toString(), centerX, centerY+10);
   }
 }
   return (
-    <div className="w-full h-full text-white rounded-[20px] bg-black-light-100">
+    <div className="-mt-[30px]">
         <Doughnut
             data={data}
             options={options}
             plugins={[doughnutLabel]}
-            width={300}
+            width="316"
         >
         </Doughnut>
     </div>
